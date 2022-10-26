@@ -30,8 +30,8 @@ class LoginFragment : Fragment() {
 
         Log.i("MYAPP", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
 
     }
