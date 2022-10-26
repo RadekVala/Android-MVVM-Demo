@@ -1,19 +1,23 @@
-package cz.utb.fai.mvvmdemo
+package cz.utb.fai.mvvmdemo.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import cz.utb.fai.mvvmdemo.databinding.FragmentFirstBinding
+import androidx.lifecycle.ViewModelProvider
+import cz.utb.fai.mvvmdemo.databinding.FragmentLoginBinding
+import cz.utb.fai.mvvmdemo.viewmodels.LoginViewModel
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentLoginBinding? = null
+
+    private lateinit var viewModel: LoginViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +28,10 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        Log.i("MYAPP", "Called ViewModelProvider.get")
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
 
     }

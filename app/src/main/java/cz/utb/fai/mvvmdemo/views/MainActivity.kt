@@ -1,4 +1,4 @@
-package cz.utb.fai.mvvmdemo
+package cz.utb.fai.mvvmdemo.views
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import cz.utb.fai.mvvmdemo.R
 import cz.utb.fai.mvvmdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
