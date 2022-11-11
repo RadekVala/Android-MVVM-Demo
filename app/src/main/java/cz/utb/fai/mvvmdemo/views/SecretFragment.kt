@@ -37,6 +37,7 @@ class SecretFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(SecretViewModel::class.java)
 
         _binding = FragmentSecretBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
 
     }
