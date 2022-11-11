@@ -8,6 +8,6 @@ class SecretViewModel(username: String) : ViewModel() {
      var name = username
 
     init {
-        Log.i("SecretViewModel", "Username is $name")
+        Log.i("MYAPP", "Username is $name")
     }
 }

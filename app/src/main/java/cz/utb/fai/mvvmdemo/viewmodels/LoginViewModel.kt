@@ -4,11 +4,11 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 
 
 import cz.utb.fai.mvvmdemo.R
 import cz.utb.fai.mvvmdemo.models.User
+import cz.utb.fai.mvvmdemo.views.LoginFragmentDirections
 
 class LoginViewModel : ViewModel() {
 
@@ -27,7 +27,8 @@ class LoginViewModel : ViewModel() {
     fun btnLoginClicked (view: View) {
         Log.i("MYAPP", "Button Login was clicked")
         if(user.email == "admin@example.com" && user.password == "123456789") {
-            view.findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            val action = LoginFragmentDirections.actionFirstFragmentToSecretFragment(username = user.email)
+            view.findNavController().navigate(action)
         }
     }
 }
